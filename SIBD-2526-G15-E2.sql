@@ -108,10 +108,25 @@ CREATE TABLE lista_personalizada (
     PRIMARY KEY nome
 )
 
+CREATE TABLE refere(
+	mbid NUMBER(35),
+	nome VARCHAR(80),
+	PRIMARY KEY (mbid, nome),
+	FOREIGN KEY (mbid) REFERENCES album,
+	FOREIGN KEY (nome) REFERENCES lista_personalizada
+)
 
 CREATE TABLE cria (
     nome VARCHAR(80),
     username VARCHAR(100),
     PRIMARY KEY (nome, username),
     FOREIGN KEY nome REFERENCES lista_personalizada,
+)
+
+CREATE TABLE interpretado(
+	isni NUMBER(16),
+	mbid NUMBER(35),
+	PRIMARY KEY (isni, mbid),
+	FOREIGN KEY (isni) REFERENCES artista,
+	FOREIGN KEY (mbid) REFERENCES album
 )
