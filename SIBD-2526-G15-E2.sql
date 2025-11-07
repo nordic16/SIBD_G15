@@ -61,7 +61,7 @@ CREATE TABLE suporte_fisico(
 
 CREATE TABLE em (
     mbid CHAR(36) NOT NULL,
-    tipo VARCHAR2(7) NOT NULL,
+    tipo VARCHAR(7) NOT NULL,
     PRIMARY KEY (mbid, tipo),
     FOREIGN KEY (mbid) REFERENCES Album(mbid),
     FOREIGN KEY (tipo) REFERENCES suporte_fisico(tipo)
