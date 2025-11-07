@@ -55,13 +55,13 @@ CREATE TABLE favorito (
 )
 
 CREATE TABLE suporte_fisico( 
-	tipo VARCHAR(6) PRIMARY KEY,
+	tipo VARCHAR(7) PRIMARY KEY,
 	CHECK (tipo IN ('CD', 'Vinil', 'Cassete'))
 )
 
 CREATE TABLE em (
     mbid CHAR(36) NOT NULL,
-    tipo VARCHAR2(6) NOT NULL,
+    tipo VARCHAR2(7) NOT NULL,
     PRIMARY KEY (mbid, tipo),
     FOREIGN KEY (mbid) REFERENCES Album(mbid),
     FOREIGN KEY (tipo) REFERENCES suporte_fisico(tipo)
