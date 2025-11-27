@@ -19,11 +19,11 @@ SELECT
 	múltiplas linhas podem ser retornadas no caso de um utilizador possuir
 	múltiplas obras desse mesmo artista.
 	*/
-	usr.username, 							-- O nome do utilizador
-	usr.email,							-- O seu email
-	alb.ean,
-	alb.titulo,							-- O identificador do àlbum
-	alb.ano,							-- O seu ano de lançamento
+	usr.username, 												-- O nome do utilizador
+	usr.email,													-- O seu email
+	alb.ean,													-- O identificador do àlbum
+	alb.titulo,													-- O título do àlbum
+	alb.ano,													-- O seu ano de lançamento
 	TRUNC(SYSDATE) - TRUNC(psi.desde) AS dias_desde_registo		-- O nº de dias de posse
 FROM
 	/*
