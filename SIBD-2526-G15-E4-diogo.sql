@@ -15,7 +15,7 @@ BEGIN
             RAISE artista_nao_existe;
         ELSE
             OPEN c_albuns;
-            FOR ean in c_albuns LOOP
+            FOR ean IN c_albuns LOOP
                 remove_album(ean);
             END LOOP;   
             CLOSE c_albuns;
